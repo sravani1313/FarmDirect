@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#42493e",
+                    "surface-bright": "#faf9f6",
+                    "surface-dim": "#dbdad7",
+                    "outline-variant": "#c2c9bb",
+                    "surface-tint": "#3b6934",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#aef67b",
+                    "on-secondary-container": "#357200",
+                    "surface-container-highest": "#e3e2e0",
+                    "on-primary": "#ffffff",
+                    "surface": "#faf9f6",
+                    "on-primary-fixed-variant": "#23501e",
+                    "inverse-on-surface": "#f2f1ee",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#93d962",
+                    "primary-container": "#2d5a27",
+                    "surface-container-low": "#f4f3f1",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed-variant": "#245100",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#ffb59c",
+                    "secondary": "#326b00",
+                    "secondary-fixed": "#aef67b",
+                    "primary": "#154212",
+                    "surface-variant": "#e3e2e0",
+                    "inverse-surface": "#2f312f",
+                    "tertiary-container": "#86391c",
+                    "on-surface": "#1a1c1a",
+                    "on-secondary-fixed": "#0b2000",
+                    "surface-container-high": "#e9e8e5",
+                    "surface-container": "#efeeeb",
+                    "on-background": "#1a1c1a",
+                    "outline": "#72796e",
+                    "on-tertiary-container": "#ffb095",
+                    "primary-fixed": "#bcf0ae",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#002201",
+                    "tertiary": "#682307",
+                    "on-primary-container": "#9dd090",
+                    "inverse-primary": "#a1d494",
+                    "tertiary-fixed": "#ffdbcf",
+                    "error": "#ba1a1a",
+                    "background": "#faf9f6",
+                    "on-tertiary-fixed": "#380c00",
+                    "on-tertiary-fixed-variant": "#793013",
+                    "primary-fixed-dim": "#a1d494"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "margin-desktop": "40px",
+                    "gutter": "24px",
+                    "base": "8px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["literata"],
+                    "body-md": ["inter"],
+                    "body-lg": ["inter"],
+                    "label-sm": ["inter"],
+                    "display-lg": ["literata"],
+                    "headline-md": ["literata"],
+                    "label-md": ["inter"],
+                    "headline-lg-mobile": ["literata"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(250, 249, 246, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .bento-item {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .bento-item:hover {
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed-dim selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="w-full sticky top-0 z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant/30">
+    <div class="max-w-container-max mx-auto px-margin-desktop flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="home.html" class="font-headline-md text-headline-md text-primary dark:text-on-primary-container font-bold flex items-center gap-2">
+            <i class="fas fa-leaf"></i> FarmDirect<span class="text-secondary">+</span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <div class="hidden md:flex items-center gap-8">
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors " href="home.html">Home</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors " href="about.html">About Us</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="shop.php">Shop</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="farmers.html">Our Farmers</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="subscription.html">Subscriptions</a>
+            
+
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="contact.php">Contact</a>
+        </div>
+
+        <!-- Action Icons & Search -->
+        <div class="flex items-center gap-4">
+            <!-- Search Bar -->
+             
+             
+            
+
+            <!-- Notifications (Kept from Tailwind Template) -->
+            <button class="text-on-surface-variant p-2 scale-95 active:scale-90 transition-transform" title="Notifications">
+                <i class="fas fa-bell"></i>
+            </button>
+
+            <!-- User Login / Register Link -->
+            <a href="login.php" class="text-on-surface-variant p-2 scale-95 active:scale-90 transition-transform" title="Login / Register">
+                <i class="fas fa-user"></i>
+            </a>
+
+            <!-- Interactive Cart Button with Badge -->
+            <button class="material-symbols-outlined text-on-surface-variant p-2 scale-95 active:scale-90 transition-transform" data-icon="account_circle">account_circle</button>
+        </div>
+    </div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative pt-12 pb-24 overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-6 z-10">
+<span class="inline-block px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm mb-6 uppercase tracking-widest">Seasonal Subscriptions</span>
+<h1 class="font-display-lg text-display-lg text-primary mb-6 leading-tight">Harvest Box: From Local Soil to Your Table.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl">Experience the pinnacle of freshness with a weekly curated selection of organic produce, delivered within 24 hours of harvest. Join our circle of stewardship today.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="bg-primary text-on-primary px-8 py-4 rounded-xl font-label-md text-label-md text-center hover:shadow-xl transition-all active:scale-95" href="#pricing">View Box Options</a>
+<a class="border border-primary text-primary px-8 py-4 rounded-xl font-label-md text-label-md text-center hover:bg-primary/5 transition-all active:scale-95" href="#how-it-works">How it Works</a>
+</div>
+<div class="mt-12 flex items-center gap-6">
+<div class="flex -space-x-3">
+<img class="w-10 h-10 rounded-full border-2 border-background object-cover" data-alt="A portrait of a smiling middle-aged male farmer in a rural field, lit by the warm glow of the setting sun. The photograph captures a sense of genuine connection and trust, with a background of soft green fields and a clear evening sky. High-end lifestyle agricultural photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_-3qpRb4FXddAihOtn6PiDOFrYCr-D7BnDOstcfz4Fp7mYQXf-XOyz7vN0LV6sbT9WTjo12_oIfpsYWw-PuLE3-AlwK1Y7zET1rUDu4F193xhD-7tX-N4kdpVBHLl70zeQJVpL8j6OD4Pvi-4x33d8bR8FcqTsmwUJhQZxRbue4T9fRxMTsphHcZZl_a2hHgTVLMyx4v_PsNdDDx2px7-JNc8Ne9f6-JSRXjGCeNQEg-VewfuDBhF9_04NyiTlIOWcmteFTRi-XQ"/>
+<img class="w-10 h-10 rounded-full border-2 border-background object-cover" data-alt="A professional headshot of a female agricultural scientist in a modern greenhouse, surrounded by vibrant green plants. The lighting is clean and high-key, emphasizing a bright and modern light-mode aesthetic. Her expression is confident and welcoming, representing technical reliability and quality control." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8YaDFg9ZRKzAJi4BTdlN51WN___jmEnxwOWviCZOqnlHMq2WTc7ksJA7eeZ-85kgutrvoeVUiCFCAvmIjxgPAtCybjh8J8ZSQ9wMVlAKPGwmQsoWQnnTYZHJp9rz9bVsB-KuTXhCrbxAfmX_3DkapPtNDwRHvIi3amD7YnkDQZuP3HPg7Rp03ysDpyRuYyZ0BO05ymYEOV5vOPsis9bWI3DM6d4UloZ-0cARgOHhH_eyU6_yEAk0v3YUcEL00qZkcKmEwxMvEILg"/>
+<div class="w-10 h-10 rounded-full border-2 border-background bg-secondary-fixed flex items-center justify-center font-label-sm text-on-secondary-fixed">+2k</div>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant">Trusted by 2,000+ local families</p>
+</div>
+</div>
+<div class="lg:col-span-6 relative">
+<div class="absolute -top-12 -right-12 w-64 h-64 bg-secondary-container/20 rounded-full blur-3xl -z-10"></div>
+<div class="rounded-3xl overflow-hidden border border-outline-variant/30 shadow-2xl shadow-primary/5 aspect-[1.34/1]">
+<img alt="Harvest Box Subscription" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbNQ6VQk4zMvpqmUMKumNSRCBQyAPqsqTVg8LIs4nmi_429qvSyOAdk1NueWNLVJdeTVaZLnz2KD7rhAjRZbaUd-h_xZPH0e0Zri8wMX3RoUK1gFjvJlmXFiyy_zfP3B6T2jIK7If24EJ1NIWSF7B7itX-AV5pNghNm4JPcEhCqx59Q3fOENjix0O2vLhrSJ5keB3UTnbsJaAQhLq1cX_tGJblR1HGEmYW7VNnmpHhJ96KxgfM-kfN2lToCtvwWgPuI8FeDZRUSdU"/>
+</div>
+<div class="absolute -bottom-8 -left-8 bg-surface p-6 rounded-2xl shadow-xl border border-outline-variant/20 max-w-[200px]">
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+<span class="font-label-sm text-label-sm">Verified Source</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface">Green Valley Organic Farms, Pune</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Value Propositions -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="group p-8 rounded-2xl border border-outline-variant/30 bg-surface hover:border-primary transition-all">
+<div class="w-14 h-14 bg-secondary-fixed/30 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">temp_preferences_custom</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Freshness Guaranteed</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">We bypass traditional cold storage. Your box is harvested, packed, and delivered within 24 hours for maximum nutrient density.</p>
+</div>
+<div class="group p-8 rounded-2xl border border-outline-variant/30 bg-surface hover:border-primary transition-all">
+<div class="w-14 h-14 bg-secondary-fixed/30 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">handshake</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Support Local Farmers</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">We ensure fair pricing for our 50+ partner farms, reinvesting 15% of profits back into sustainable irrigation and soil health.</p>
+</div>
+<div class="group p-8 rounded-2xl border border-outline-variant/30 bg-surface hover:border-primary transition-all">
+<div class="w-14 h-14 bg-secondary-fixed/30 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">schedule</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Flexible Delivery</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Going on vacation? Pause, skip, or donate your weekly harvest box with a single tap in the FarmDirect+ dashboard.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- What's Inside Bento Grid -->
+<section class="py-24">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-2xl">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">What's Inside This Week?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">The seasons dictate our menu. Here's a glimpse of the premium organic produce shipping to our members right now.</p>
+</div>
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md">
+<span>Updated Oct 24, 2024</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="md:col-span-2 md:row-span-2 bento-item bg-surface-container rounded-3xl overflow-hidden relative group">
+<img class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500" data-alt="A macro photograph of vibrant, dew-kissed heirloom tomatoes in various shades of red and orange. The shot is taken in soft, natural morning light on a rustic wooden table, emphasizing their organic texture and freshness. The overall aesthetic is editorial and premium agricultural photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM0YUjrwqnQ-Nvb2dA1NlQ5IVP4kP5_nEG39Cg4gIwgtbvcBm2mJaJI0Z-aUsk7mcq7wDppqLq69Z0cboPkvXxaELnH_o8dyTHyGQmNltpUpfkFXOGhv-t92oKurTdyDrPmgDWX24ixnA0bgLPsn89U486gLBshWp057pMafzvSFijpqNoYilFPB4-8y1Nfspso8aGEbrRK5pGV5slVVVA8wigvUzgVIIdD1-2m1gqIETkkRZckQ9vhAjGWFRSwBxOHLZcCVrqQvo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8">
+<span class="text-white/80 font-label-sm text-label-sm uppercase mb-2">Primary Harvest</span>
+<h3 class="text-white font-headline-md text-headline-md mb-2">Heritage Heirloom Tomatoes</h3>
+<p class="text-white/70 font-body-md text-body-md">Sweet, acidic, and perfectly sun-ripened.</p>
+</div>
+</div>
+<div class="bento-item bg-surface-container rounded-3xl overflow-hidden relative group aspect-square">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A clean, minimalist close-up of a bunch of deep purple organic kale. The lighting is diffused and cool-toned, creating a fresh and crisp atmosphere. The image is set against a neutral, light-colored background to highlight the rich biophilic colors of the produce." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL00oUZ46CbmMPFqnwuuLRWG7avvEPZ1KCH5TFtLaVFGg6PVihtTz-infaluti_cY_s4qTC-vHdq9htEhOetpHTSEqob70m69O1ouqkQOmJkeheQtxKIdFfnFlRlwl5qbtnE-X1j6hf_KZyHcdqhyrlhIP6Jq3EqUGtz_RpbUO-AKyJgXk4fVqISzPueKN08p-nP_aHbLQ8fl902v5JdItEO-ah_TVVQDdpyqJTwlipiOIkQHso4IpFlAxmZMjm3TdCDOXXAVyeG8"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors p-6 flex flex-col justify-end">
+<h4 class="text-white font-headline-md text-headline-md">Lacinato Kale</h4>
+</div>
+</div>
+<div class="bento-item bg-tertiary-fixed rounded-3xl p-8 flex flex-col justify-between group">
+<div>
+<span class="material-symbols-outlined text-tertiary text-[40px] mb-6">psychiatry</span>
+<h4 class="font-headline-md text-headline-md text-tertiary">Wild Herbs Bundle</h4>
+<p class="font-body-md text-body-md text-on-tertiary-fixed-variant mt-2">Mint, Thyme, and Lemon Basil for aromatic cooking.</p>
+</div>
+<div class="flex justify-end">
+<span class="material-symbols-outlined text-tertiary group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+<div class="md:col-span-2 bento-item bg-secondary-fixed rounded-3xl p-8 flex items-center justify-between group">
+<div class="max-w-[60%]">
+<h4 class="font-headline-md text-headline-md text-on-secondary-fixed">The Crunch Box</h4>
+<p class="font-body-md text-body-md text-on-secondary-fixed-variant mt-2">Rainbow Carrots and Baby Cucumbers from the Nashik Valley.</p>
+</div>
+<div class="w-24 h-24 bg-white/20 rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-[48px] text-on-secondary-fixed">nutrition</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How it Works -->
+<section class="py-24 bg-surface-container" id="how-it-works">
+<div class="max-w-container-max mx-auto px-margin-desktop text-center">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-16">Simple Stewardship in 3 Steps</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter relative">
+<!-- Connector Lines (Desktop Only) -->
+<div class="hidden md:block absolute top-1/4 left-[30%] right-[30%] h-px border-t border-dashed border-outline-variant"></div>
+<div class="relative z-10">
+<div class="w-16 h-16 bg-primary text-on-primary rounded-full flex items-center justify-center font-headline-md text-headline-md mx-auto mb-8">1</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-4">Choose Your Box</h4>
+<p class="font-body-md text-body-md text-on-surface-variant px-6">Select the size and frequency that fits your family's kitchen needs.</p>
+</div>
+<div class="relative z-10">
+<div class="w-16 h-16 bg-primary text-on-primary rounded-full flex items-center justify-center font-headline-md text-headline-md mx-auto mb-8">2</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-4">Farmers Harvest</h4>
+<p class="font-body-md text-body-md text-on-surface-variant px-6">Our partners pick the best of the season exclusively for your order.</p>
+</div>
+<div class="relative z-10">
+<div class="w-16 h-16 bg-primary text-on-primary rounded-full flex items-center justify-center font-headline-md text-headline-md mx-auto mb-8">3</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-4">Delivered Fresh</h4>
+<p class="font-body-md text-body-md text-on-surface-variant px-6">Receive your harvest box at your doorstep within 24 hours.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Tiers -->
+<section class="py-24" id="pricing">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Subscription Plans</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Cancel or pause anytime. No hidden fees.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Basic -->
+<div class="border border-outline-variant/50 rounded-3xl p-8 flex flex-col bg-surface hover:shadow-xl transition-all">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-4 uppercase tracking-widest">Individual</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Basic Box</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Perfect for singles or couples who cook 3-4 times a week.</p>
+<div class="mb-8">
+<span class="text-[40px] font-bold text-primary">₹899</span>
+<span class="text-on-surface-variant">/week</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+                                4kg seasonal produce
+                            </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+                                6-8 variety of items
+                            </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+                                Weekly Newsletter
+                            </li>
+</ul>
+<button class="w-full border border-primary text-primary py-4 rounded-xl font-label-md text-label-md hover:bg-primary/5 transition-colors">Start Basic</button>
+</div>
+<!-- Premium (Featured) -->
+<div class="border-2 border-primary rounded-3xl p-8 flex flex-col bg-surface-container relative shadow-2xl scale-105 z-10">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-4 py-1 rounded-full font-label-sm text-label-sm">MOST POPULAR</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-4 uppercase tracking-widest">Small Family</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Premium Box</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Ideal for families of 3-4 looking for high culinary variety.</p>
+<div class="mb-8">
+<span class="text-[40px] font-bold text-primary">₹1,499</span>
+<span class="text-on-surface-variant">/week</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+                                7kg seasonal produce
+                            </li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+                                12-14 variety of items
+                            </li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+                                Wild Herb Bundle included
+                            </li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+                                Priority 12h delivery
+                            </li>
+</ul>
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity">Start Premium</button>
+</div>
+<!-- Family -->
+<div class="border border-outline-variant/50 rounded-3xl p-8 flex flex-col bg-surface hover:shadow-xl transition-all">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-4 uppercase tracking-widest">Large Household</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Family Box</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Comprehensive supply for large families or shared houses.</p>
+<div class="mb-8">
+<span class="text-[40px] font-bold text-primary">₹2,299</span>
+<span class="text-on-surface-variant">/week</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+                                12kg seasonal produce
+                            </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+                                20+ variety of items
+                            </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+                                Customization available
+                            </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+                                Free cold-pressed oil sample
+                            </li>
+</ul>
+<button class="w-full border border-primary text-primary py-4 rounded-xl font-label-md text-label-md hover:bg-primary/5 transition-colors">Start Family</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter CTA -->
+<section class="py-24 bg-primary-container text-on-primary-container relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop text-center relative z-10">
+<h2 class="font-headline-lg text-headline-lg mb-6">Ready to Taste the Difference?</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container/80 mb-10 max-w-2xl mx-auto">Join the 2,000+ families already supporting local stewardship. Sign up for our 'Harvest Preview' newsletter and get ₹200 off your first box.</p>
+<form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto" onsubmit="event.preventDefault(); alert('Subscribed!')">
+<input class="flex-grow bg-white/10 border border-white/20 rounded-xl px-6 py-4 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-secondary-fixed" placeholder="Enter your email" type="email"/>
+<button class="bg-secondary-fixed text-on-secondary-fixed px-8 py-4 rounded-xl font-label-md text-label-md hover:bg-secondary-fixed/90 transition-colors">Subscribe Now</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<!-- Footer Section -->
+<footer class="bg-gray-50 pt-2 pb-1 mt-0 border-t border-gray-200">
+  
+  <!-- Pre-footer / Value Props (Like Flipkart/Adani) -->
+  <div class="max-w-7xl mx-auto px-6 mb-2 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+    <div class="p-6">
+      <div class="text-3xl mb-4 text-green-600">🌱</div>
+      <h4 class="font-bold text-gray-900 mb-2">Farm Fresh</h4>
+      <p class="text-sm text-gray-500">Direct from local farms to your kitchen in under 24 hours.</p>
+    </div>
+    <div class="p-6">
+      <div class="text-3xl mb-4 text-green-600">🚚</div>
+      <h4 class="font-bold text-gray-900 mb-2">Fast Delivery</h4>
+      <p class="text-sm text-gray-500">Reliable delivery across your region with real-time tracking.</p>
+    </div>
+    <div class="p-6">
+      <div class="text-3xl mb-4 text-green-600">🔒</div>
+      <h4 class="font-bold text-gray-900 mb-2">Secure Payments</h4>
+      <p class="text-sm text-gray-500">Encrypted transactions for a safe and seamless shopping experience.</p>
+    </div>
+  </div>
+
+  <!-- Main Footer Content -->
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-16 mb-2">
+    
+    <!-- Brand Info -->
+    <div class="col-span-2 lg:col-span-1 space-y-4">
+      <h2 class="text-2xl font-black text-green-700">FarmDirect+</h2>
+      <p class="text-gray-500 text-sm leading-relaxed">
+        Building a sustainable future by connecting rural farmers with urban consumers. Quality you can trust.
+      </p>
+    </div>
+
+    <!-- Links Groups -->
+    <div>
+      <h3 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-6">Explore</h3>
+      <ul class="space-y-4 text-sm text-gray-600">
+        <li><a href="home.html" class="hover:text-green-600 transition-colors">Home</a></li>
+        <li><a href="about.html" class="hover:text-green-600 transition-colors">About Us</a></li>
+        <li><a href="products.html" class="hover:text-green-600 transition-colors">Products</a></li>
+        <li><a href="farmers.html" class="hover:text-green-600 transition-colors">Our Farmers</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-6">Support</h3>
+      <ul class="space-y-4 text-sm text-gray-600">
+        <li><a href="contact.php" class="hover:text-green-600 transition-colors">Contact Us</a></li>
+        <li><a href="" class="hover:text-green-600 transition-colors">Track </a></li>
+        <li><a href="#" class="hover:text-green-600 transition-colors">Return Policy</a></li>
+        <li><a href="#" class="hover:text-green-600 transition-colors">Shipping</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-6">Resources</h3>
+      <ul class="space-y-4 text-sm text-gray-600">
+        <li><a href="#" class="hover:text-green-600 transition-colors">Privacy</a></li>
+        <li><a href="#" class="hover:text-green-600 transition-colors">Terms of Service</a></li>
+        <li><a href="#" class="hover:text-green-600 transition-colors">Sustainability</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="col-span-2 lg:col-span-1">
+      <h3 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-6">Newsletter</h3>
+      <p class="text-xs text-gray-500 mb-6">Subscribe for exclusive farm offers and seasonal discounts.</p>
+      <!-- Newsletter Form inside your footer -->
+<form id="newsletter-form" action="subscribe.php" method="POST" class="space-y-3">
+  <input type="email" name="email" placeholder="Your email address" required 
+         class="w-full bg-white px-4 py-3 border border-gray-200 rounded-lg text-black focus:border-green-500 outline-none transition-all">
+  <button type="submit" class="w-full bg-gray-900 text-white py-3 rounded-lg hover:bg-green-600 transition-all font-medium text-sm">
+    Subscribe
+  </button>
+</form>
+    </div>
+  </div>
+
+  <!-- Copyright Strip -->
+  <div class="max-w-12xl mx-auto px-7 border-t border- pt-8 text-center text-xm text-black">
+    &copy; 2026 FarmDirect+ India. All rights reserved. 
+    <span class="mx-2">|</span> 
+    Operating in Guntakal, Andhra Pradesh.
+  </div>
+</footer>
+
+<script>
+document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+    e.preventDefault(); // This keeps you on the same page
+    
+    let formData = new FormData(this);
+    
+    fetch('subscribe.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        let status = data.trim();
+        
+        if(status === "success") {
+            alert('Successfully subscribed! Thank you for joining us. 🎉');
+            document.getElementById('newsletter-form').reset();
+        } else if(status === "exists") {
+            alert('You are already subscribed to our newsletter! 😊');
+        } else {
+            alert('Something went wrong. Please try again later.');
+        }
+    })
+    .catch(error => {
+        alert('Connection error. Please check your server.');
+    });
+});
+</script>
+
+
+<script>
+        // Simple scroll interaction for nav
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+
+        // Hover effect for pricing cards
+        const pricingCards = document.querySelectorAll('#pricing > div > div');
+        pricingCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                if (!card.classList.contains('scale-105')) {
+                    card.style.transform = 'translateY(-8px)';
+                }
+            });
+            card.addEventListener('mouseleave', () => {
+                if (!card.classList.contains('scale-105')) {
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
+</body></html>

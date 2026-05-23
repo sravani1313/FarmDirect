@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Literata:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#42493e",
+                        "surface-bright": "#faf9f6",
+                        "surface-dim": "#dbdad7",
+                        "outline-variant": "#c2c9bb",
+                        "surface-tint": "#3b6934",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#aef67b",
+                        "on-secondary-container": "#357200",
+                        "surface-container-highest": "#e3e2e0",
+                        "on-primary": "#ffffff",
+                        "surface": "#faf9f6",
+                        "on-primary-fixed-variant": "#23501e",
+                        "inverse-on-surface": "#f2f1ee",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#93d962",
+                        "primary-container": "#2d5a27",
+                        "surface-container-low": "#f4f3f1",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#245100",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#ffb59c",
+                        "secondary": "#326b00",
+                        "secondary-fixed": "#aef67b",
+                        "primary": "#154212",
+                        "surface-variant": "#e3e2e0",
+                        "inverse-surface": "#2f312f",
+                        "tertiary-container": "#86391c",
+                        "on-surface": "#1a1c1a",
+                        "on-secondary-fixed": "#0b2000",
+                        "surface-container-high": "#e9e8e5",
+                        "surface-container": "#efeeeb",
+                        "on-background": "#1a1c1a",
+                        "outline": "#72796e",
+                        "on-tertiary-container": "#ffb095",
+                        "primary-fixed": "#bcf0ae",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#002201",
+                        "tertiary": "#682307",
+                        "on-primary-container": "#9dd090",
+                        "inverse-primary": "#a1d494",
+                        "tertiary-fixed": "#ffdbcf",
+                        "error": "#ba1a1a",
+                        "background": "#faf9f6",
+                        "on-tertiary-fixed": "#380c00",
+                        "on-tertiary-fixed-variant": "#793013",
+                        "primary-fixed-dim": "#a1d494"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["literata"],
+                        "body-md": ["inter"],
+                        "body-lg": ["inter"],
+                        "label-sm": ["inter"],
+                        "display-lg": ["literata"],
+                        "headline-md": ["literata"],
+                        "label-md": ["inter"],
+                        "headline-lg-mobile": ["literata"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .biophilic-grid {
+            background-image: radial-gradient(circle, #c2c9bb 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-container">
+<!-- TopNavBar -->
+<nav class="w-full sticky top-0 z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant/30">
+<div class="max-w-container-max mx-auto px-margin-desktop flex items-center justify-between h-20">
+<span class="font-headline-md text-headline-md text-primary dark:text-on-primary-container font-bold">FarmDirect+</span>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="home.html">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="about.html">About Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="products.html">Products</a>
+<a class="font-body-md text-body-md text-primary font-semibold border-b-2 border-primary" href="farmers.html">Our Farmers</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="subscription.html">Subscriptions</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="contact.php">Contact
+</div>
+<div class="flex items-center gap-4">
+
+</div>
+
+<button class="material-symbols-outlined text-on-surface-variant p-2 scale-95 active:scale-90 transition-transform" data-icon="account_circle">account_circle</button>
+</div>
+</div>
+</nav>
+<main class="biophilic-grid">
+<!-- Hero Section -->
+<header class="relative overflow-hidden pt-16 pb-24 md:pt-24 md:pb-32">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-7 z-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full mb-6">
+<span class="material-symbols-outlined text-[16px]" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Certified Steward</span>
+</div>
+<h1 class="font-display-lg text-display-lg mb-4 text-primary leading-tight">Rajesh Kumar</h1>
+<h2 class="font-headline-lg text-headline-lg italic text-tertiary mb-8">Kumar Heritage Orchards</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-10 leading-relaxed">
+                        "The land does not belong to us; we belong to the land. At Kumar Heritage, we treat every tree as an ancestor and every harvest as a sacred exchange between nature and community."
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-label-md flex items-center gap-2 hover:shadow-lg transition-all scale-[0.98] active:scale-95">
+<span class="material-symbols-outlined" data-icon="shopping_basket">shopping_basket</span>
+                            Shop Now
+                        </button>
+
+</div>
+</div>
+<div class="md:col-span-5 relative mt-12 md:mt-0">
+<div class="aspect-[4/5] rounded-[2rem] overflow-hidden border-8 border-surface-container shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+<img alt="Rajesh Kumar" class="w-full h-full object-cover" data-alt="A portrait of Rajesh Kumar, a middle-aged farmer with a warm, wise expression, standing in a sun-drenched organic mango orchard. He is wearing traditional comfortable cotton clothing. The sunlight filters through the dense green canopy of mango trees, creating a soft, biophilic atmosphere with natural green and gold tones. The image captures a high-trust, authentic editorial feeling with soft ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyfUui8noVMvuJkXQgITBj6weF0XBB08hzmxOtaM5yWS3n3l5_OA6rKlG5IWBbyn466QlRH5TozllOmfskvRzS0arR3xVVoFSBxIgdtayMlwP-J2_soHbiBFwPma73i28nUZED709uEHEqSokTHJoLZ4-dQkKFiR3pgabO8xbUz7F9-xGll0lv7t7o0R3qssc6vCgfhOzSRLt-K3LYZe0ISHt17G0IKW8ofeg0d1-fa-vf-dAZbTQZ6e2deuzvHE5Lax2Oz98xYEk"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-surface-container-lowest p-6 rounded-2xl shadow-xl border border-outline-variant/20 max-w-[200px]">
+<p class="font-headline-md text-headline-md text-primary">120</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Years of family stewardship in Maharashtra</p>
+</div>
+</div>
+</div>
+</header>
+<!-- Impact Metrics -->
+<section class="bg-primary-container py-16">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-gutter text-center">
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-secondary-fixed text-4xl mb-4" data-icon="eco">eco</span>
+<h3 class="font-headline-md text-headline-md text-surface-bright">100%</h3>
+<p class="font-label-md text-label-md text-on-primary-container">Organic Certified</p>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-secondary-fixed text-4xl mb-4" data-icon="water_drop">water_drop</span>
+<h3 class="font-headline-md text-headline-md text-surface-bright">40%</h3>
+<p class="font-label-md text-label-md text-on-primary-container">Water Saved (Drip-Irrigation)</p>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-secondary-fixed text-4xl mb-4" data-icon="psychology">psychology</span>
+<h3 class="font-headline-md text-headline-md text-surface-bright">Zero</h3>
+<p class="font-label-md text-label-md text-on-primary-container">Synthetic Inputs</p>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-secondary-fixed text-4xl mb-4" data-icon="groups">groups</span>
+<h3 class="font-headline-md text-headline-md text-surface-bright">12</h3>
+<p class="font-label-md text-label-md text-on-primary-container">Local Families Employed</p>
+</div>
+</div>
+</section>
+<!-- Philosophy Section (Asymmetric Bento) -->
+<section class="py-24 max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+<div class="max-w-2xl">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Regenerative Philosophy</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Rajesh integrates ancient Vedic farming techniques with modern soil microbiology to create a self-sustaining ecosystem that thrives without external chemicals.</p>
+</div>
+<div class="text-right">
+<a class="font-label-md text-label-md text-primary flex items-center gap-2 hover:underline" href="#">
+                        Learn about Regenerative Agriculture
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-6 h-[700px] md:h-[600px]">
+<div class="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-3xl border border-outline-variant/30">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A lush, vibrant bento-style grid image showing the rich, dark soil of Kumar Heritage Orchards. Healthy green cover crops are growing between the trunks of ancient mango trees. The lighting is golden hour sunlight, emphasizing the texture of the organic soil and the biophilic richness of a regenerative farm. The mood is tranquil and fertile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcFTHo4nJjfbu5xbyhAlhXdBt4L-f_lBg-YUErd57YsXPuhsn9LAnwd9fNudVLj39bLJzkV-s3ZE7-0WoLj5EXK2h0uBbkg9RR3qftlL0WOMNre7fPyKdBXcFrSFfAWZrlY4MyHaYVv9fOHo8V-p8hd0nKFZf2kmnBvV8IZvQ1vR7vjGbCPA6HT8veOrxprKfMZ1RspmgeuXpVrKeD4odx685SG2x9o8eXllCuYFNMoVI4IBTlZ4K7lAWBKnmdutpahgPqGb4DwbA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-10">
+<h3 class="font-headline-md text-headline-md text-white mb-2">Soil Restoration</h3>
+<p class="font-body-md text-white/90 max-w-md">By practicing multi-layer cropping and natural mulching, we've increased soil carbon levels by 300% in a decade.</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-3xl border border-outline-variant/30 flex flex-col justify-center">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-6" data-icon="auto_awesome">auto_awesome</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Biodiversity</h3>
+<p class="font-body-md text-on-surface-variant">Our orchards are home to over 40 species of birds and beneficial insects that manage pests naturally.</p>
+</div>
+<div class="bg-secondary-container/30 p-8 rounded-3xl border border-outline-variant/30 flex flex-col justify-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="history_edu">history_edu</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Ancestral Wisdom</h3>
+<p class="font-body-md text-on-surface-variant">We use lunar planting cycles and traditional fermentation for natural fertilizers.</p>
+</div>
+</div>
+</section>
+<!-- What He Grows Section -->
+<section class="py-24 bg-surface-container-high">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Seasonal Bounty</h2>
+<p class="font-body-md text-body-md text-on-surface-variant italic">Direct from the orchard to your table</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Mangoes -->
+<div class="flex flex-col md:flex-row gap-8 items-center bg-surface-container-lowest p-6 rounded-[2rem] border border-outline-variant/20 hover:border-primary/40 transition-colors group">
+<div class="w-full md:w-64 h-64 shrink-0 rounded-2xl overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A macro shot of vibrant, ripe Alphonso mangoes still on the branch in Rajesh Kumar's orchard. The skin of the mangoes glows with deep gold and orange hues under warm, natural sunlight. Dewdrops are visible on the surface, emphasizing freshness. The background is a soft-focus blur of green orchard leaves." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC31hiiuy0KEMmcAvhbqRE7GVsWXvog52oE-GhGR1uymAu90i1TuCcDkbfms8q31t-Un0SvgoTWY5YnyXacPuI3GBJvlS9yQGOMbcszEAAULZzw9sGOf1DYMT6ftXTmAZdrxtdbss4lMic3YKiiBGJQZyaXSmL4BxFvUZwNF1CliHVxosDdMKvUKp1wuwIoqPTCHZor0s7rqe-qKLl1eJqmxrMczdamcUG-Xs0FPw_R0HisRLUcfpJYxwRtLvlGgsunWXYGEwMQ6LI"/>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-headline-md text-primary">Alphonso Mangoes</h3>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-full text-label-sm uppercase">In Season</span>
+</div>
+<p class="font-body-md text-on-surface-variant">Grown with dry-farming techniques to concentrate the natural sugars and produce a buttery, aromatic profile.</p>
+<div class="flex items-center gap-4 mt-2">
+<span class="font-headline-md text-headline-md text-primary">$45.00 <span class="text-label-sm font-normal text-on-surface-variant">/ 5kg Box</span></span>
+<button class="bg-primary text-on-primary w-10 h-10 rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+
+</button>
+</div>
+</div>
+</div>
+<!-- Pomegranates -->
+<div class="flex flex-col md:flex-row gap-8 items-center bg-surface-container-lowest p-6 rounded-[2rem] border border-outline-variant/20 hover:border-primary/40 transition-colors group">
+<div class="w-full md:w-64 h-64 shrink-0 rounded-2xl overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Beautiful, deep red pomegranates split open to reveal glistening, jewel-like seeds. The fruit is presented on a rustic wooden table in a sunlit outdoor farm setting. The lighting is crisp and clear, highlighting the high-contrast textures of the fruit. The overall aesthetic is editorial and premium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoLoyHQ6qXOBro0jMB56gkVKCLoRhSr3xpX_QojZgr8lijDDDXEO0bgW8aPjRMGWrs-NHI5goHJb-3_0liokbZVDhociPa8prf-GGNFb12btfbQISYV7Ml4dpUQOwB8sNl__LLtZOYh_rs5NVtqQlVXbDcwRF5Qm2eB9DaaeS5AcMDaqTGTHHfNFD0R0JkCQib2awuu5B7akGM-wtfzJ5tOUVpgrUrcQjLOpu-V5xctnXXo9cpEgfXw0DWttNCxM3HGfvZIyYaeDk"/>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-headline-md text-primary">Ruby Pomegranates</h3>
+<span class="bg-surface-container-highest text-on-surface-variant px-3 py-1 rounded-full text-label-sm uppercase">Coming Soon</span>
+</div>
+<p class="font-body-md text-on-surface-variant">Known for their high antioxidant content and vibrant color, harvested only when fully vine-ripened.</p>
+<div class="flex items-center gap-4 mt-2">
+<span class="font-headline-md text-headline-md text-primary">$28.00 <span class="text-label-sm font-normal text-on-surface-variant">/ 3kg Tray</span></span>
+<button class="bg-outline text-surface-bright w-10 h-10 rounded-full flex items-center justify-center cursor-not-allowed">
+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Direct Impact / Transparency -->
+<section class="py-24 max-w-container-max mx-auto px-margin-desktop">
+<div class="bg-white p-12 rounded-[3rem] shadow-sm border border-outline-variant/30 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-[120px]" data-icon="handshake">handshake</span>
+</div>
+<div class="relative z-10 max-w-3xl">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Your Direct Impact</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">When you buy from Kumar Heritage Orchards, your support goes beyond the box. You are funding the transition of 3 more neighboring farms to organic practices this year.</p>
+<div class="space-y-8">
+<div class="flex gap-6 items-start">
+<div class="bg-secondary-fixed w-12 h-12 shrink-0 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-fixed" data-icon="school">school</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-1">Farmer Education</h4>
+<p class="font-body-md text-on-surface-variant">Rajesh hosts monthly workshops for 20+ local farmers on natural pesticide creation.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="bg-secondary-fixed w-12 h-12 shrink-0 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-fixed" data-icon="payments">payments</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-1">Fair Wages</h4>
+<p class="font-body-md text-on-surface-variant">Our staff earns 35% above the regional average, with full healthcare for their families.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<!-- Footer Section -->
+<footer class="bg-gray-50 pt-2 pb-1 mt-0 border-t border-gray-200">
+  
+  <!-- Pre-footer / Value Props (Like Flipkart/Adani) -->
+  <div class="max-w-7xl mx-auto px-6 mb-2 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+    <div class="p-6">
+      <div class="text-3xl mb-4 text-green-600">🌱</div>
+      <h4 class="font-bold text-gray-900 mb-2">Farm Fresh</h4>
+      <p class="text-sm text-gray-500">Direct from local farms to your kitchen in under 24 hours.</p>
+    </div>
+    <div class="p-6">
+      <div class="text-3xl mb-4 text-green-600">🚚</div>
+      <h4 class="font-bold text-gray-900 mb-2">Fast Delivery</h4>
+      <p class="text-sm text-gray-500">Reliable delivery across your region with real-time tracking.</p>
+    </div>
+    <div class="p-6">
+      <div class="text-3xl mb-4 text-green-600">🔒</div>
+      <h4 class="font-bold text-gray-900 mb-2">Secure Payments</h4>
+      <p class="text-sm text-gray-500">Encrypted transactions for a safe and seamless shopping experience.</p>
+    </div>
+  </div>
+
+  <!-- Main Footer Content -->
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-16 mb-2">
+    
+    <!-- Brand Info -->
+    <div class="col-span-2 lg:col-span-1 space-y-4">
+      <h2 class="text-2xl font-black text-green-700">FarmDirect+</h2>
+      <p class="text-gray-500 text-sm leading-relaxed">
+        Building a sustainable future by connecting rural farmers with urban consumers. Quality you can trust.
+      </p>
+    </div>
+
+    <!-- Links Groups -->
+    <div>
+      <h3 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-6">Explore</h3>
+      <ul class="space-y-4 text-sm text-gray-600">
+        <li><a href="home.html" class="hover:text-green-600 transition-colors">Home</a></li>
+        <li><a href="about.html" class="hover:text-green-600 transition-colors">About Us</a></li>
+        <li><a href="products.html" class="hover:text-green-600 transition-colors">Products</a></li>
+        <li><a href="farmers.html" class="hover:text-green-600 transition-colors">Our Farmers</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-6">Support</h3>
+      <ul class="space-y-4 text-sm text-gray-600">
+        <li><a href="contact.php" class="hover:text-green-600 transition-colors">Contact Us</a></li>
+        <li><a href="" class="hover:text-green-600 transition-colors">Track </a></li>
+        <li><a href="#" class="hover:text-green-600 transition-colors">Return Policy</a></li>
+        <li><a href="#" class="hover:text-green-600 transition-colors">Shipping</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-6">Resources</h3>
+      <ul class="space-y-4 text-sm text-gray-600">
+        <li><a href="#" class="hover:text-green-600 transition-colors">Privacy</a></li>
+        <li><a href="#" class="hover:text-green-600 transition-colors">Terms of Service</a></li>
+        <li><a href="#" class="hover:text-green-600 transition-colors">Sustainability</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="col-span-2 lg:col-span-1">
+      <h3 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-6">Newsletter</h3>
+      <p class="text-xs text-gray-500 mb-6">Subscribe for exclusive farm offers and seasonal discounts.</p>
+      <!-- Newsletter Form inside your footer -->
+<form id="newsletter-form" action="subscribe.php" method="POST" class="space-y-3">
+  <input type="email" name="email" placeholder="Your email address" required 
+         class="w-full bg-white px-4 py-3 border border-gray-200 rounded-lg text-black focus:border-green-500 outline-none transition-all">
+  <button type="submit" class="w-full bg-gray-900 text-white py-3 rounded-lg hover:bg-green-600 transition-all font-medium text-sm">
+    Subscribe
+  </button>
+</form>
+    </div>
+  </div>
+
+  <!-- Copyright Strip -->
+  <div class="max-w-12xl mx-auto px-7 border-t border- pt-8 text-center text-xm text-black">
+    &copy; 2026 FarmDirect+ India. All rights reserved. 
+    <span class="mx-2">|</span> 
+    Operating in Guntakal, Andhra Pradesh.
+  </div>
+</footer>
+
+<script>
+document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+    e.preventDefault(); // This keeps you on the same page
+    
+    let formData = new FormData(this);
+    
+    fetch('subscribe.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        let status = data.trim();
+        
+        if(status === "success") {
+            alert('Successfully subscribed! Thank you for joining us. 🎉');
+            document.getElementById('newsletter-form').reset();
+        } else if(status === "exists") {
+            alert('You are already subscribed to our newsletter! 😊');
+        } else {
+            alert('Something went wrong. Please try again later.');
+        }
+    })
+    .catch(error => {
+        alert('Connection error. Please check your server.');
+    });
+});
+</script>
+
+
+<script>
+        // Micro-interaction for images
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('mouseenter', () => {
+                img.style.filter = 'brightness(1.05)';
+            });
+            img.addEventListener('mouseleave', () => {
+                img.style.filter = 'brightness(1)';
+            });
+        });
+
+        // Floating Action Button logic as per Shell Mandate
+        // This is a details/story page, so we suppress the FAB as per PROHIBITION instructions
+        // "You MUST suppress the FAB on Settings, Profile, Details, and Transactional screens."
+    </script>
+</body></html>
