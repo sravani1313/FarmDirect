@@ -100,7 +100,7 @@
                 <span class="font-heading font-bold text-2xl tracking-tight text-surfaceDark">Farm<span class="text-primary">Direct+</span></span>
             </a>
             <div class="hidden md:flex items-center gap-8 font-medium text-gray-600">
-                <a href="home.html" class="hover:text-primary transition-colors py-1">Home</a>
+                <a href="index.php" class="hover:text-primary transition-colors py-1">Home</a>
                 <a href="about.html" class="hover:text-primary transition-colors py-1">About Us</a>
                 <a href="products.html" class="hover:text-primary transition-colors py-1" >Products</a>
                 <a href="farmers.html" class="hover:text-primary transition-colors py-1 ">Farmers</a>
@@ -537,7 +537,7 @@
     <div>
       <h3 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-6">Explore</h3>
       <ul class="space-y-4 text-sm text-gray-600">
-        <li><a href="home.html" class="hover:text-green-600 transition-colors">Home</a></li>
+        <li><a href="index.php" class="hover:text-green-600 transition-colors">Home</a></li>
         <li><a href="about.html" class="hover:text-green-600 transition-colors">About Us</a></li>
         <li><a href="products.html" class="hover:text-green-600 transition-colors">Products</a></li>
         <li><a href="farmers.html" class="hover:text-green-600 transition-colors">Our Farmers</a></li>
