@@ -1,11 +1,12 @@
 <?php
-$conn = new mysqli("localhost", "root", "Sravani@777", "farmdirect");
+// Include the central database connection
+include 'db.php'; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        // Check if email exists
+        // Use the $conn variable defined in db.php
         $check = $conn->prepare("SELECT email FROM newsletter_subscribers WHERE email = ?");
         $check->bind_param("s", $email);
         $check->execute();
