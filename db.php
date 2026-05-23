@@ -2,8 +2,8 @@
 // Retrieve database credentials from environment variables
 $host = getenv('DB_HOST') ?: 'localhost';
 $user = getenv('DB_USER') ?: 'root';
-$pass = getenv('DB_PASS') ?: '';
-$db   = getenv('DB_NAME') ?: 'farm_db';
+$pass = getenv('DB_PASS') ?: ''; // Leave this empty for local development
+$db   = getenv('DB_NAME') ?: 'farmdirect';
 
 // Create connection
 $conn = mysqli_connect($host, $user, $pass, $db);
