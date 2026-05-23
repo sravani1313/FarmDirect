@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['is_admin'] = 1;
             $_SESSION['is_farmer'] = 0;
             
-            echo "<script>alert('Welcome Admin!'); window.location.href='/farmdirect/admin_dashboard.php';</script>";
+            echo "<script>alert('Welcome Admin!'); window.location.href='/admin_dashboard.php';</script>";
             exit();
         } else {
             // Fallback emergency configuration if the admin user isn't physically in the database table yet
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['is_admin'] = 1;
             $_SESSION['is_farmer'] = 0;
             
-            echo "<script>alert('Welcome Admin (Fallback Session Mode)!'); window.location.href='/farmdirect/admin_dashboard.php';</script>";
+            echo "<script>alert('Welcome Admin (Fallback Session Mode)!'); window.location.href='/admin_dashboard.php';</script>";
             exit();
         }
     }
