@@ -1,6 +1,8 @@
 <?php
 session_start();
 require 'db.php';
+echo "Session User ID: " . $_SESSION['user_id'];
+
 
 // Route Protection Guard
 if (!isset($_SESSION['user_id'])) {
