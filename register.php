@@ -19,13 +19,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $check_email = $conn->query("SELECT id FROM users WHERE email = '$email'");
     
     if ($check_email->num_rows > 0) {
-        echo "<script>alert('Email already exists!'); window.location.href='/farmdirect/login.php';</script>";
+        echo "<script>alert('Email already exists!'); window.location.href='/login.php';</script>";
     } else {
         // Updated INSERT statement to include is_farmer
         $sql = "INSERT INTO users (full_name, email, password, is_farmer) VALUES ('$name', '$email', '$password', $is_farmer)";
         
         if ($conn->query($sql) === TRUE) {
-            echo "<script>alert('Registration successful! Please login.'); window.location.href='/farmdirect/login.php';</script>";
+            echo "<script>alert('Registration successful! Please login.'); window.location.href='/login.php';</script>";
         } else {
             // This displays the database error if the query fails
             echo "Database Error: " . $conn->error;
