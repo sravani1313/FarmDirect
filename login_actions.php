@@ -63,19 +63,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
             // Route users dynamically based on corporate/customer role tags
             if ($user['is_admin'] == 1) {
-                echo "<script>alert('Welcome Admin!'); window.location.href='/farmdirect/admin_dashboard.php';</script>";
+                echo "<script>alert('Welcome Admin!'); window.location.href='/admin_dashboard.php';</script>";
             } elseif ($user['is_farmer'] == 1) {
-                echo "<script>alert('Welcome Farmer!'); window.location.href='/farmdirect/farmer_dashboard.php';</script>";
+                echo "<script>alert('Welcome Farmer!'); window.location.href='/farmer_dashboard.php';</script>";
             } else {
-                echo "<script>alert('Login successful!'); window.location.href='/farmdirect/account.php';</script>";
+                echo "<script>alert('Login successful!'); window.location.href='/account.php';</script>";
             }
             exit();
         } else {
-            echo "<script>alert('Incorrect password!'); window.location.href='/farmdirect/login.php';</script>";
+            echo "<script>alert('Incorrect password!'); window.location.href='/login.php';</script>";
             exit();
         }
     } else {
-        echo "<script>alert('User not found!'); window.location.href='/farmdirect/login.php';</script>";
+        echo "<script>alert('User not found!'); window.location.href='/login.php';</script>";
         exit();
     }
 }
