@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO messages (full_name, email, subject, message) VALUES ('$name', '$email', '$subject', '$message')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "<script>alert('Message sent successfully!'); window.location.href='/farmdirect/contact.php';</script>";
+        echo "<script>alert('Message sent successfully!'); window.location.href='/contact.php';</script>";
     } else {
         echo "Error: " . $conn->error;
     }
