@@ -548,7 +548,7 @@
                 <a href="products.html" class="hover:text-green-600">Products</a>
                 <a href="farmers.html" class="hover:text-primary transition-colors py-1">Farmers</a>
                 <a href="subscription.html" class="hover:text-primary transition-colors py-1">Subscriptions</a>
-                <a href="contact.html" class="hover:text-primary transition-colors py-1">Contact Us</a>
+                <a href="contact.php" class="hover:text-primary transition-colors py-1">Contact Us</a>
             </div>
             
             <div class="flex items-center gap-6">
